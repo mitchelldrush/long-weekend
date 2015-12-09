@@ -1,0 +1,97 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class EntryPerson extends JFrame
+{
+     private JLabel FNameL, LNameL, DOBL, StreetAddressL, CityL, StateL, NumberL, RelationL;
+	 
+	 private JTextField FNameTF, LNameTF, DOBTF, StreetAddressTF, CityTF, StateTF, NumberTF, RelationTF;
+	 
+	 private JButton submitB, exitB;
+	 
+	 private SubmitButtonHandler sbHandler;
+	 private ExitButtonHandler ebHandler;
+	 
+	 private static final int WIDTH = 500;
+	 private static final int HEIGHT = 400;
+	 public EntryPerson()
+	 {
+		  FNameL = new JLabel ("First Name: ", SwingConstants.RIGHT);
+		  LNameL = new JLabel ("Last Name: ", SwingConstants.RIGHT);
+		  DOBL = new JLabel ("Date of Birth: ", SwingConstants.RIGHT);
+		  StreetAddressL = new JLabel ("Street: ", SwingConstants.RIGHT);
+		  CityL = new JLabel ("City: ", SwingConstants.RIGHT);
+		  StateL = new JLabel ("State: ", SwingConstants.RIGHT);
+  		  NumberL = new JLabel ("Phone Number: ", SwingConstants.RIGHT);
+		  RelationL = new JLabel ("Relationship]: ", SwingConstants.RIGHT);
+
+		  
+		  FNameTF = new JTextField(10);
+		  LNameTF = new JTextField(10);
+		  StreetAddressTF = new JTextField(10);
+		  DOBTF = new JTextField(10);
+		  CityTF = new JTextField(10);
+		  StateTF = new JTextField(10);
+		  NumberTF = new JTextField(10);
+		  RelationTF = new JTextField(10);
+		  
+		  submitB = new JButton("Submit");
+		  sbHandler = new SubmitButtonHandler();
+		  submitB.addActionListener(sbHandler);
+		  
+		  exitB = new JButton("Exit");
+		  ebHandler = new ExitButtonHandler();
+		  exitB.addActionListener(ebHandler);
+		  
+		  setTitle("Persronal Details");
+		  
+		  Container pane = getContentPane();
+		  
+		  pane.setLayout(new GridLayout(9, 2));
+		  
+		  pane.add(FNameL);
+		  pane.add(FNameTF);
+		  pane.add(LNameL);
+		  pane.add(LNameTF);
+		  pane.add(StreetAddressL);
+		  pane.add(StreetAddressTF);
+		  pane.add(DOBL);
+		  pane.add(DOBTF);
+      pane.add(CityL);
+		  pane.add(CityTF);
+		  pane.add(StateL);
+		  pane.add(StateTF);
+		  pane.add(NumberL);
+		  pane.add(NumberTF);
+		  pane.add(RelationL);
+		  pane.add(RelationTF);
+		  pane.add(submitB);
+		  pane.add(exitB);
+		  
+		  setSize(WIDTH, HEIGHT);
+		  setVisible(true);
+		  setDefaultCloseOperation(EXIT_ON_CLOSE);
+		  }
+		  
+		  private class SubmitButtonHandler implements ActionListener
+		  {
+		       public void actionPerformed(ActionEvent e)
+			   {
+			        
+			   }
+		  }
+		  
+		  private class ExitButtonHandler implements ActionListener
+		  {
+		       public void actionPerformed(ActionEvent e)
+			   {
+			        System.exit(0);
+			   }
+		  }
+		  
+		  public static void main(String[] args)
+		  {
+		       EntryPerson EntyPrsn = new EntryPerson();
+		  }
+}
